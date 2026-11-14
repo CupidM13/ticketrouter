@@ -109,7 +109,7 @@ All models evaluated across the held-out clean test set (3,069 queries, zero tra
 ### 1. Setup Environment
 ```bash
 # Clone the repository
-git clone https://github.com/ticketrouter/ticketrouter.git
+git clone https://github.com/CupidM13/ticketrouter.git
 cd ticketrouter
 
 # Install dependencies using uv
@@ -117,7 +117,17 @@ uv sync
 source .venv/bin/activate
 ```
 
-### 2. Prepare Data & Baseline
+### 2. Download Pre-Trained Weights
+The LoRA fine-tuned adapter weights (`adapter_model.safetensors`, 70 MB) are hosted directly on [GitHub Release v1.0.0](https://github.com/CupidM13/ticketrouter/releases/tag/v1.0.0):
+```bash
+# Download via GitHub CLI:
+gh release download v1.0.0 -p "adapter_model.safetensors" -D models/qwen_lora_adapter/
+
+# Or download via curl:
+curl -L -o models/qwen_lora_adapter/adapter_model.safetensors https://github.com/CupidM13/ticketrouter/releases/download/v1.0.0/adapter_model.safetensors
+```
+
+### 3. Prepare Data & Baseline
 ```bash
 # Audit dataset, remove 11 leakage queries, detect label noise, and build splits
 python -m ticketrouter.data --output-dir data
@@ -126,7 +136,7 @@ python -m ticketrouter.data --output-dir data
 python -m ticketrouter.baseline
 ```
 
-### 3. Fine-Tune with LoRA
+### 4. Fine-Tune with LoRA
 ```bash
 # Run local 20-step smoke test pipeline (CPU/MPS):
 python -m ticketrouter.train --base-model Qwen/Qwen2.5-0.5B-Instruct --smoke
@@ -139,7 +149,7 @@ kaggle kernels output your-username/ticketrouter-lora-training -p models/
 tar -xzvf models/ticketrouter_lora_adapter.tar.gz
 ```
 
-### 4. Run Promotion Gate
+### 5. Run Promotion Gate
 ```bash
 # Verify promotion of candidate to @Production alias
 python -m ticketrouter.gate \
@@ -153,7 +163,7 @@ python -m ticketrouter.gate \
   --bad-candidate
 ```
 
-### 5. Serving Cascade & Streamlit Dashboard
+### 6. Serving Cascade & Streamlit Dashboard
 ```bash
 # Launch FastAPI Serving Cascade (port 8000)
 python -m ticketrouter.serve --port 8000
@@ -179,7 +189,7 @@ curl -X POST http://localhost:8000/predict \
 }
 ```
 
-### 6. Simulate Live Traffic Replay & Trigger Drift Alert
+### 7. Simulate Live Traffic Replay & Trigger Drift Alert
 ```bash
 # Replays 150 clean queries followed by 150 shifted queries through the service
 python -m ticketrouter.monitor --replay --window 150
@@ -188,7 +198,7 @@ python -m ticketrouter.monitor --replay --window 150
 cat retrain_request.json
 ```
 
-### 7. Kubernetes Deployment (kind)
+### 8. Kubernetes Deployment (kind)
 ```bash
 # Build multi-stage Docker container
 docker build -t ticketrouter:latest .
