@@ -130,16 +130,16 @@ curl -L -o models/qwen_lora_adapter/adapter_model.safetensors https://github.com
 ### 3. Prepare Data & Baseline
 ```bash
 # Audit dataset, remove 11 leakage queries, detect label noise, and build splits
-python -m ticketrouter.data --output-dir data
+uv run python -m ticketrouter.data --output-dir data
 
 # Train TF-IDF + Logistic Regression baseline & log to MLflow
-python -m ticketrouter.baseline
+uv run python -m ticketrouter.baseline
 ```
 
 ### 4. Fine-Tune with LoRA
 ```bash
 # Run local 20-step smoke test pipeline (CPU/MPS):
-python -m ticketrouter.train --base-model Qwen/Qwen2.5-0.5B-Instruct --smoke
+uv run python -m ticketrouter.train --base-model Qwen/Qwen2.5-0.5B-Instruct --smoke
 
 # Full Kaggle T4 GPU Training:
 # The self-contained notebook is available at notebooks/kaggle_train.ipynb
@@ -152,12 +152,12 @@ tar -xzvf models/ticketrouter_lora_adapter.tar.gz
 ### 5. Run Promotion Gate
 ```bash
 # Verify promotion of candidate to @Production alias
-python -m ticketrouter.gate \
+uv run python -m ticketrouter.gate \
   --candidate-metrics metrics/candidate_metrics.json \
   --production-metrics metrics/production_metrics.json
 
 # Test deliberate gate rejection on failing candidate (exits non-zero)
-python -m ticketrouter.gate \
+uv run python -m ticketrouter.gate \
   --candidate-metrics metrics/candidate_metrics.json \
   --production-metrics metrics/production_metrics.json \
   --bad-candidate
@@ -166,10 +166,10 @@ python -m ticketrouter.gate \
 ### 6. Serving Cascade & Streamlit Dashboard
 ```bash
 # Launch FastAPI Serving Cascade (port 8000)
-python -m ticketrouter.serve --port 8000
+uv run python -m ticketrouter.serve --port 8000
 
 # In a separate terminal: Launch Streamlit Monitoring Dashboard (port 8501)
-streamlit run ticketrouter/app.py --server.port 8501
+uv run streamlit run ticketrouter/app.py --server.port 8501
 ```
 
 #### Test Predictions:
@@ -192,7 +192,7 @@ curl -X POST http://localhost:8000/predict \
 ### 7. Simulate Live Traffic Replay & Trigger Drift Alert
 ```bash
 # Replays 150 clean queries followed by 150 shifted queries through the service
-python -m ticketrouter.monitor --replay --window 150
+uv run python -m ticketrouter.monitor --replay --window 150
 
 # Inspect generated retrain trigger
 cat retrain_request.json
