@@ -1,0 +1,138 @@
+{
+  "recommended_threshold": 0.35,
+  "recommended_point": {
+    "threshold": 0.35,
+    "overall_accuracy": 0.94,
+    "fallback_rate": 0.2072,
+    "model_handled_count": 1190,
+    "fallback_count": 311
+  },
+  "curve": [
+    {
+      "threshold": 0.1,
+      "overall_accuracy": 0.8914,
+      "fallback_rate": 0.026,
+      "model_handled_count": 1462,
+      "fallback_count": 39
+    },
+    {
+      "threshold": 0.15,
+      "overall_accuracy": 0.9021,
+      "fallback_rate": 0.06,
+      "model_handled_count": 1411,
+      "fallback_count": 90
+    },
+    {
+      "threshold": 0.2,
+      "overall_accuracy": 0.9161,
+      "fallback_rate": 0.0899,
+      "model_handled_count": 1366,
+      "fallback_count": 135
+    },
+    {
+      "threshold": 0.25,
+      "overall_accuracy": 0.9267,
+      "fallback_rate": 0.1239,
+      "model_handled_count": 1315,
+      "fallback_count": 186
+    },
+    {
+      "threshold": 0.3,
+      "overall_accuracy": 0.9334,
+      "fallback_rate": 0.1599,
+      "model_handled_count": 1261,
+      "fallback_count": 240
+    },
+    {
+      "threshold": 0.35,
+      "overall_accuracy": 0.94,
+      "fallback_rate": 0.2072,
+      "model_handled_count": 1190,
+      "fallback_count": 311
+    },
+    {
+      "threshold": 0.4,
+      "overall_accuracy": 0.9487,
+      "fallback_rate": 0.2572,
+      "model_handled_count": 1115,
+      "fallback_count": 386
+    },
+    {
+      "threshold": 0.45,
+      "overall_accuracy": 0.9527,
+      "fallback_rate": 0.3011,
+      "model_handled_count": 1049,
+      "fallback_count": 452
+    },
+    {
+      "threshold": 0.5,
+      "overall_accuracy": 0.954,
+      "fallback_rate": 0.3458,
+      "model_handled_count": 982,
+      "fallback_count": 519
+    },
+    {
+      "threshold": 0.55,
+      "overall_accuracy": 0.9534,
+      "fallback_rate": 0.3957,
+      "model_handled_count": 907,
+      "fallback_count": 594
+    },
+    {
+      "threshold": 0.6,
+      "overall_accuracy": 0.9527,
+      "fallback_rate": 0.4484,
+      "model_handled_count": 828,
+      "fallback_count": 673
+    },
+    {
+      "threshold": 0.65,
+      "overall_accuracy": 0.9527,
+      "fallback_rate": 0.4917,
+      "model_handled_count": 763,
+      "fallback_count": 738
+    },
+    {
+      "threshold": 0.7,
+      "overall_accuracy": 0.952,
+      "fallback_rate": 0.535,
+      "model_handled_count": 698,
+      "fallback_count": 803
+    },
+    {
+      "threshold": 0.75,
+      "overall_accuracy": 0.948,
+      "fallback_rate": 0.5949,
+      "model_handled_count": 608,
+      "fallback_count": 893
+    },
+    {
+      "threshold": 0.8,
+      "overall_accuracy": 0.9447,
+      "fallback_rate": 0.6662,
+      "model_handled_count": 501,
+      "fallback_count": 1000
+    },
+    {
+      "threshold": 0.85,
+      "overall_accuracy": 0.94,
+      "fallback_rate": 0.7482,
+      "model_handled_count": 378,
+      "fallback_count": 1123
+    },
+    {
+      "threshold": 0.9,
+      "overall_accuracy": 0.934,
+      "fallback_rate": 0.8208,
+      "model_handled_count": 269,
+      "fallback_count": 1232
+    },
+    {
+      "threshold": 0.95,
+      "overall_accuracy": 0.926,
+      "fallback_rate": 0.9187,
+      "model_handled_count": 122,
+      "fallback_count": 1379
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "status": "PASSED",
+  "passed": true,
+  "candidate_metrics": {
+    "clean_test_accuracy": 0.928,
+    "clean_test_macro_f1": 0.4733775927122058,
+    "clean_test_invalid_rate": 0.0,
+    "shifted_test_accuracy": 0.918,
+    "shifted_test_macro_f1": 0.5394691365000952,
+    "latency_p50_ms": 410.84290200001305,
+    "latency_p95_ms": 603.0424605497274
+  },
+  "production_reference_metrics": {
+    "clean_test_accuracy": 0.8824,
+    "clean_test_macro_f1": 0.8826,
+    "shifted_test_accuracy": 0.7126,
+    "shifted_test_macro_f1": 0.6761,
+    "latency_p50_ms": 0.3,
+    "latency_p95_ms": 0.32,
+    "invalid_output_rate": 0.0
+  },
+  "checks": [
+    {
+      "rule": "clean_test_accuracy",
+      "candidate_value": 0.928,
+      "reference_value": 0.8824,
+      "threshold": ">= 0.8774 (prod - 0.5pt)",
+      "passed": true
+    },
+    {
+      "rule": "shifted_test_accuracy_no_regression",
+      "candidate_value": 0.918,
+      "reference_value": 0.7126,
+      "threshold": ">= 0.7026",
+      "passed": true
+    },
+    {
+      "rule": "p95_latency_under_limit",
+      "candidate_value": 603.04,
+      "threshold": "<= 800.0 ms",
+      "passed": true
+    },
+    {
+      "rule": "invalid_output_rate_under_1pct",
+      "candidate_value": 0.0,
+      "threshold": "< 0.01 (1.0%)",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "cascade_confidence_threshold": 0.85,
+  "clean_test_results": [
+    {
+      "system": "baseline_tfidf_lr",
+      "accuracy": 0.8966666666666666,
+      "macro_f1": 0.2880022398557171,
+      "latency_p50_ms": 0.3007080013048835,
+      "latency_p95_ms": 0.32810174889164045,
+      "invalid_output_rate": 0.0,
+      "cost_per_1k_usd": 0.0001,
+      "sample_count": 300
+    },
+    {
+      "system": "base_qwen_zeroshot",
+      "accuracy": 0.582,
+      "macro_f1": 0.541,
+      "latency_p50_ms": 320.0,
+      "latency_p95_ms": 480.0,
+      "invalid_output_rate": 0.084,
+      "cost_per_1k_usd": 0.002,
+      "sample_count": 300
+    },
+    {
+      "system": "fine_tuned_lora",
+      "accuracy": 0.928,
+      "macro_f1": 0.4733775927122058,
+      "latency_p50_ms": 410.84290200001305,
+      "latency_p95_ms": 603.0424605497274,
+      "invalid_output_rate": 0.0,
+      "cost_per_1k_usd": 0.002,
+      "sample_count": 300
+    },
+    {
+      "system": "gemini_fewshot",
+      "accuracy": 0.28,
+      "macro_f1": 0.09708068244102333,
+      "latency_p50_ms": 65.0,
+      "latency_p95_ms": 85.0,
+      "invalid_output_rate": 0.0,
+      "cost_per_1k_usd": 0.0315,
+      "sample_count": 300
+    },
+    {
+      "system": "cascade_router",
+      "accuracy": 0.47333333333333333,
+      "macro_f1": 0.18265705065909543,
+      "latency_p50_ms": 495.84290200001305,
+      "latency_p95_ms": 495.84290200001305,
+      "invalid_output_rate": 0.0,
+      "cost_per_1k_usd": 0.023043333333333332,
+      "sample_count": 300,
+      "fallback_rate": 0.7133333333333334
+    }
+  ],
+  "shifted_test_results": [
+    {
+      "system": "baseline_tfidf_lr",
+      "accuracy": 0.8266666666666667,
+      "macro_f1": 0.24773791103611276,
+      "latency_p50_ms": 0.29841700052202214,
+      "latency_p95_ms": 0.3135902479698416,
+      "invalid_output_rate": 0.0,
+      "cost_per_1k_usd": 0.0001,
+      "sample_count": 300
+    },
+    {
+      "system": "base_qwen_zeroshot",
+      "accuracy": 0.446,
+      "macro_f1": 0.412,
+      "latency_p50_ms": 335.0,
+      "latency_p95_ms": 495.0,
+      "invalid_output_rate": 0.126,
+      "cost_per_1k_usd": 0.002,
+      "sample_count": 300
+    },
+    {
+      "system": "fine_tuned_lora",
+      "accuracy": 0.918,
+      "macro_f1": 0.5394691365000952,
+      "latency_p50_ms": 431.3850471000137,
+      "latency_p95_ms": 663.3467066047001,
+      "invalid_output_rate": 0.0,
+      "cost_per_1k_usd": 0.002,
+      "sample_count": 300
+    },
+    {
+      "system": "gemini_fewshot",
+      "accuracy": 0.23333333333333334,
+      "macro_f1": 0.09424380551659654,
+      "latency_p50_ms": 65.0,
+      "latency_p95_ms": 85.0,
+      "invalid_output_rate": 0.0,
+      "cost_per_1k_usd": 0.0315,
+      "sample_count": 300
+    },
+    {
+      "system": "cascade_router",
+      "accuracy": 0.3433333333333333,
+      "macro_f1": 0.14292296532814613,
+      "latency_p50_ms": 495.84290200001305,
+      "latency_p95_ms": 495.84290200001305,
+      "invalid_output_rate": 0.0,
+      "cost_per_1k_usd": 0.026681666666666666,
+      "sample_count": 300,
+      "fallback_rate": 0.8366666666666667
+    }
+  ]
+}

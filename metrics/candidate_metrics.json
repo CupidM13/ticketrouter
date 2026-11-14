@@ -1,0 +1,29 @@
+{
+  "run_id": "5da1adf7609f4c46b01452429cf5db09",
+  "model_name": "ticketrouter_model",
+  "metrics": {
+    "clean_test_accuracy": 0.928,
+    "clean_test_macro_f1": 0.4733775927122058,
+    "clean_test_invalid_rate": 0.0,
+    "shifted_test_accuracy": 0.918,
+    "shifted_test_macro_f1": 0.5394691365000952,
+    "latency_p50_ms": 410.84290200001305,
+    "latency_p95_ms": 603.0424605497274
+  },
+  "clean_eval": {
+    "accuracy": 0.928,
+    "macro_f1": 0.4733775927122058,
+    "invalid_output_rate": 0.0,
+    "latency_p50_ms": 410.84290200001305,
+    "latency_p95_ms": 603.0424605497274,
+    "samples_evaluated": 500
+  },
+  "shifted_eval": {
+    "accuracy": 0.918,
+    "macro_f1": 0.5394691365000952,
+    "invalid_output_rate": 0.006,
+    "latency_p50_ms": 401.719218000153,
+    "latency_p95_ms": 600.9692004999806,
+    "samples_evaluated": 500
+  }
+}

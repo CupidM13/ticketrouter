@@ -1,0 +1,144 @@
+{
+  "class_balance": {
+    "num_classes": 77,
+    "train_min_samples": 35,
+    "train_max_samples": 187,
+    "train_median_samples": 127.0,
+    "test_min_samples": 40,
+    "test_max_samples": 40
+  },
+  "leakage": {
+    "exact_leakage_count": 0,
+    "near_leakage_count": 11,
+    "sample_near_leakages": [
+      {
+        "test_text": "How do I unblock my PIN?",
+        "test_label": "pin_blocked",
+        "train_label": "pin_blocked",
+        "label_matches": true
+      },
+      {
+        "test_text": "\n\nWhat businesses accept this card?",
+        "test_label": "card_acceptance",
+        "train_label": "card_acceptance",
+        "label_matches": true
+      },
+      {
+        "test_text": "Where can I use my card?",
+        "test_label": "card_acceptance",
+        "train_label": "card_acceptance",
+        "label_matches": true
+      },
+      {
+        "test_text": "How do I change my address?",
+        "test_label": "edit_personal_details",
+        "train_label": "edit_personal_details",
+        "label_matches": true
+      },
+      {
+        "test_text": "There are a few transaction that I don't recognize, I think someone managed to get my card details and use it.",
+        "test_label": "compromised_card",
+        "train_label": "compromised_card",
+        "label_matches": true
+      }
+    ]
+  },
+  "label_noise": {
+    "num_candidates": 10,
+    "top_candidates": [
+      {
+        "index": 8422,
+        "text": "can i get a virtual card",
+        "true_label": "get_disposable_virtual_card",
+        "predicted_label": "getting_virtual_card",
+        "confidence": 0.8436655752333437
+      },
+      {
+        "index": 4425,
+        "text": "What are the disposable virtual card limits?",
+        "true_label": "disposable_card_limits",
+        "predicted_label": "get_disposable_virtual_card",
+        "confidence": 0.7236077674329969
+      },
+      {
+        "index": 8726,
+        "text": "My transfer is pending too long.",
+        "true_label": "balance_not_updated_after_bank_transfer",
+        "predicted_label": "pending_transfer",
+        "confidence": 0.7079686003426843
+      },
+      {
+        "index": 7108,
+        "text": "I cant transfer money into my account",
+        "true_label": "beneficiary_not_allowed",
+        "predicted_label": "transfer_into_account",
+        "confidence": 0.6949384654560299
+      },
+      {
+        "index": 557,
+        "text": "When I was traveling abroad, the exchange rate was applied wrong.",
+        "true_label": "card_payment_wrong_exchange_rate",
+        "predicted_label": "wrong_exchange_rate_for_cash_withdrawal",
+        "confidence": 0.6612115777989443
+      },
+      {
+        "index": 919,
+        "text": "what currencies do you accept?",
+        "true_label": "fiat_currency_support",
+        "predicted_label": "supported_cards_and_currencies",
+        "confidence": 0.6366114918523157
+      },
+      {
+        "index": 4792,
+        "text": "There is a payment I don't recognise!",
+        "true_label": "direct_debit_payment_not_recognised",
+        "predicted_label": "card_payment_not_recognised",
+        "confidence": 0.6178382947928812
+      },
+      {
+        "index": 8387,
+        "text": "What is the function of the disposable cards?",
+        "true_label": "get_disposable_virtual_card",
+        "predicted_label": "disposable_card_limits",
+        "confidence": 0.6089225392429707
+      },
+      {
+        "index": 8302,
+        "text": "I believe my exchange rate is incorrect",
+        "true_label": "wrong_exchange_rate_for_cash_withdrawal",
+        "predicted_label": "card_payment_wrong_exchange_rate",
+        "confidence": 0.6069959445487647
+      },
+      {
+        "index": 8464,
+        "text": "What are the benefits of a disposable card?",
+        "true_label": "get_disposable_virtual_card",
+        "predicted_label": "disposable_card_limits",
+        "confidence": 0.6031257993486804
+      }
+    ]
+  },
+  "drift_config": {
+    "held_out_15_intents": [
+      "cancel_transfer",
+      "card_payment_fee_charged",
+      "disposable_card_limits",
+      "edit_personal_details",
+      "exchange_via_app",
+      "fiat_currency_support",
+      "getting_spare_card",
+      "getting_virtual_card",
+      "pending_cash_withdrawal",
+      "pending_top_up",
+      "pin_blocked",
+      "request_refund",
+      "top_up_by_bank_transfer_charge",
+      "top_up_reverted",
+      "transfer_not_received_by_recipient"
+    ],
+    "shifted_test_samples": 3069,
+    "clean_test_samples": 3069,
+    "train_samples": 8502,
+    "val_samples": 1501
+  }
+}

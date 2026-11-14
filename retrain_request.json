@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-11-14T14:10:39.094866+00:00",
+  "window_size": 150,
+  "alert_triggered": true,
+  "reasons": [
+    "Class distribution drift detected: PSI = 8.9035 >= threshold (0.20)",
+    "Confidence drop detected: mean confidence 0.521 (drop 0.379 >= 0.15)"
+  ],
+  "metrics": {
+    "psi": 8.9035,
+    "mean_confidence": 0.5205,
+    "confidence_drop": 0.3795,
+    "fallback_rate": 0.3267,
+    "fallback_count": 49,
+    "latency_p50_ms": 0.33,
+    "latency_p95_ms": 0.37
+  },
+  "thresholds": {
+    "psi_threshold": 0.2,
+    "fallback_threshold": 0.35,
+    "confidence_drop_threshold": 0.15
+  }
+}

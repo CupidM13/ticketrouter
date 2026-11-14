@@ -1,0 +1,259 @@
+[
+  {
+    "timestamp": "2026-11-14T11:10:29.124734+00:00",
+    "window_size": 150,
+    "alert_triggered": true,
+    "reasons": [
+      "Class distribution drift detected: PSI = 10.8005 >= threshold (0.20)",
+      "High fallback rate detected: 69.3% >= threshold (35.0%)",
+      "Confidence drop detected: mean confidence 0.665 (drop 0.235 >= 0.15)"
+    ],
+    "metrics": {
+      "psi": 10.8005,
+      "mean_confidence": 0.6655,
+      "confidence_drop": 0.2345,
+      "fallback_rate": 0.6933,
+      "fallback_count": 104,
+      "latency_p50_ms": 0.35,
+      "latency_p95_ms": 0.43
+    },
+    "thresholds": {
+      "psi_threshold": 0.2,
+      "fallback_threshold": 0.35,
+      "confidence_drop_threshold": 0.15
+    }
+  },
+  {
+    "timestamp": "2026-11-14T11:10:29.338058+00:00",
+    "window_size": 150,
+    "alert_triggered": true,
+    "reasons": [
+      "Class distribution drift detected: PSI = 9.6861 >= threshold (0.20)",
+      "High fallback rate detected: 86.7% >= threshold (35.0%)",
+      "Confidence drop detected: mean confidence 0.511 (drop 0.389 >= 0.15)"
+    ],
+    "metrics": {
+      "psi": 9.6861,
+      "mean_confidence": 0.5112,
+      "confidence_drop": 0.3888,
+      "fallback_rate": 0.8667,
+      "fallback_count": 130,
+      "latency_p50_ms": 0.36,
+      "latency_p95_ms": 0.43
+    },
+    "thresholds": {
+      "psi_threshold": 0.2,
+      "fallback_threshold": 0.35,
+      "confidence_drop_threshold": 0.15
+    }
+  },
+  {
+    "timestamp": "2026-11-14T11:10:54.545903+00:00",
+    "window_size": 150,
+    "alert_triggered": true,
+    "reasons": [
+      "Class distribution drift detected: PSI = 1.4075 >= threshold (0.20)",
+      "High fallback rate detected: 74.0% >= threshold (35.0%)",
+      "Confidence drop detected: mean confidence 0.620 (drop 0.280 >= 0.15)"
+    ],
+    "metrics": {
+      "psi": 1.4075,
+      "mean_confidence": 0.62,
+      "confidence_drop": 0.28,
+      "fallback_rate": 0.74,
+      "fallback_count": 111,
+      "latency_p50_ms": 0.35,
+      "latency_p95_ms": 0.41
+    },
+    "thresholds": {
+      "psi_threshold": 0.2,
+      "fallback_threshold": 0.35,
+      "confidence_drop_threshold": 0.15
+    }
+  },
+  {
+    "timestamp": "2026-11-14T11:10:54.865343+00:00",
+    "window_size": 150,
+    "alert_triggered": true,
+    "reasons": [
+      "Class distribution drift detected: PSI = 8.9531 >= threshold (0.20)",
+      "High fallback rate detected: 86.0% >= threshold (35.0%)",
+      "Confidence drop detected: mean confidence 0.517 (drop 0.383 >= 0.15)"
+    ],
+    "metrics": {
+      "psi": 8.9531,
+      "mean_confidence": 0.5166,
+      "confidence_drop": 0.3834,
+      "fallback_rate": 0.86,
+      "fallback_count": 129,
+      "latency_p50_ms": 0.34,
+      "latency_p95_ms": 0.48
+    },
+    "thresholds": {
+      "psi_threshold": 0.2,
+      "fallback_threshold": 0.35,
+      "confidence_drop_threshold": 0.15
+    }
+  },
+  {
+    "timestamp": "2026-11-14T11:11:13.401681+00:00",
+    "window_size": 150,
+    "alert_triggered": true,
+    "reasons": [
+      "Class distribution drift detected: PSI = 1.4075 >= threshold (0.20)",
+      "Confidence drop detected: mean confidence 0.620 (drop 0.280 >= 0.15)"
+    ],
+    "metrics": {
+      "psi": 1.4075,
+      "mean_confidence": 0.62,
+      "confidence_drop": 0.28,
+      "fallback_rate": 0.22,
+      "fallback_count": 33,
+      "latency_p50_ms": 0.34,
+      "latency_p95_ms": 0.37
+    },
+    "thresholds": {
+      "psi_threshold": 0.2,
+      "fallback_threshold": 0.35,
+      "confidence_drop_threshold": 0.15
+    }
+  },
+  {
+    "timestamp": "2026-11-14T11:11:13.716631+00:00",
+    "window_size": 150,
+    "alert_triggered": true,
+    "reasons": [
+      "Class distribution drift detected: PSI = 8.9531 >= threshold (0.20)",
+      "Confidence drop detected: mean confidence 0.517 (drop 0.383 >= 0.15)"
+    ],
+    "metrics": {
+      "psi": 8.9531,
+      "mean_confidence": 0.5166,
+      "confidence_drop": 0.3834,
+      "fallback_rate": 0.3333,
+      "fallback_count": 50,
+      "latency_p50_ms": 0.33,
+      "latency_p95_ms": 0.36
+    },
+    "thresholds": {
+      "psi_threshold": 0.2,
+      "fallback_threshold": 0.35,
+      "confidence_drop_threshold": 0.15
+    }
+  },
+  {
+    "timestamp": "2026-11-14T11:11:32.528753+00:00",
+    "window_size": 150,
+    "alert_triggered": true,
+    "reasons": [
+      "Class distribution drift detected: PSI = 8.9531 >= threshold (0.20)",
+      "Confidence drop detected: mean confidence 0.517 (drop 0.383 >= 0.15)"
+    ],
+    "metrics": {
+      "psi": 8.9531,
+      "mean_confidence": 0.5166,
+      "confidence_drop": 0.3834,
+      "fallback_rate": 0.3333,
+      "fallback_count": 50,
+      "latency_p50_ms": 0.33,
+      "latency_p95_ms": 0.36
+    },
+    "thresholds": {
+      "psi_threshold": 0.2,
+      "fallback_threshold": 0.35,
+      "confidence_drop_threshold": 0.15
+    }
+  },
+  {
+    "timestamp": "2026-11-14T11:33:35.181713+00:00",
+    "window_size": 150,
+    "alert_triggered": true,
+    "reasons": [
+      "Class distribution drift detected: PSI = 8.9251 >= threshold (0.20)",
+      "Confidence drop detected: mean confidence 0.518 (drop 0.382 >= 0.15)"
+    ],
+    "metrics": {
+      "psi": 8.9251,
+      "mean_confidence": 0.5184,
+      "confidence_drop": 0.3816,
+      "fallback_rate": 0.3333,
+      "fallback_count": 50,
+      "latency_p50_ms": 0.33,
+      "latency_p95_ms": 0.36
+    },
+    "thresholds": {
+      "psi_threshold": 0.2,
+      "fallback_threshold": 0.35,
+      "confidence_drop_threshold": 0.15
+    }
+  },
+  {
+    "timestamp": "2026-11-14T13:58:54.174081+00:00",
+    "window_size": 150,
+    "alert_triggered": true,
+    "reasons": [
+      "Class distribution drift detected: PSI = 8.9055 >= threshold (0.20)",
+      "Confidence drop detected: mean confidence 0.517 (drop 0.383 >= 0.15)"
+    ],
+    "metrics": {
+      "psi": 8.9055,
+      "mean_confidence": 0.5169,
+      "confidence_drop": 0.3831,
+      "fallback_rate": 0.3333,
+      "fallback_count": 50,
+      "latency_p50_ms": 0.33,
+      "latency_p95_ms": 0.37
+    },
+    "thresholds": {
+      "psi_threshold": 0.2,
+      "fallback_threshold": 0.35,
+      "confidence_drop_threshold": 0.15
+    }
+  },
+  {
+    "timestamp": "2026-11-14T13:59:16.666028+00:00",
+    "window_size": 150,
+    "alert_triggered": true,
+    "reasons": [
+      "Class distribution drift detected: PSI = 8.9055 >= threshold (0.20)",
+      "Confidence drop detected: mean confidence 0.517 (drop 0.383 >= 0.15)"
+    ],
+    "metrics": {
+      "psi": 8.9055,
+      "mean_confidence": 0.5169,
+      "confidence_drop": 0.3831,
+      "fallback_rate": 0.3333,
+      "fallback_count": 50,
+      "latency_p50_ms": 0.33,
+      "latency_p95_ms": 0.37
+    },
+    "thresholds": {
+      "psi_threshold": 0.2,
+      "fallback_threshold": 0.35,
+      "confidence_drop_threshold": 0.15
+    }
+  },
+  {
+    "timestamp": "2026-11-14T14:10:39.094866+00:00",
+    "window_size": 150,
+    "alert_triggered": true,
+    "reasons": [
+      "Class distribution drift detected: PSI = 8.9035 >= threshold (0.20)",
+      "Confidence drop detected: mean confidence 0.521 (drop 0.379 >= 0.15)"
+    ],
+    "metrics": {
+      "psi": 8.9035,
+      "mean_confidence": 0.5205,
+      "confidence_drop": 0.3795,
+      "fallback_rate": 0.3267,
+      "fallback_count": 49,
+      "latency_p50_ms": 0.33,
+      "latency_p95_ms": 0.37
+    },
+    "thresholds": {
+      "psi_threshold": 0.2,
+      "fallback_threshold": 0.35,
+      "confidence_drop_threshold": 0.15
+    }
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "val_accuracy": 0.8767488341105929,
+  "val_macro_f1": 0.8708844566052854,
+  "clean_test_accuracy": 0.8823721081785598,
+  "clean_test_macro_f1": 0.8825793647347404,
+  "shifted_test_accuracy": 0.7126099706744868,
+  "shifted_test_macro_f1": 0.6761191586306541,
+  "latency_p50_ms": 0.30047900008867146,
+  "latency_p95_ms": 0.3240018000269628,
+  "invalid_output_rate": 0.0
+}

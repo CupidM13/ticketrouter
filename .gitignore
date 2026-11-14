@@ -1,0 +1,41 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+build/
+dist/
+
+# Large Model Weights & Archives (downloaded/generated during runs)
+models/*.tar.gz
+models/qwen_lora_adapter/checkpoints/
+models/qwen_lora_adapter/*.safetensors
+models/models/
+models/ticketrouter/
+
+# Local databases & run tracking
+predictions.db
+mlflow.db
+mlruns/
+.cache/
+
+# Testing & Linting
+.pytest_cache/
+.ruff_cache/
+
+# OS / Editor specific
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment secrets
+.env

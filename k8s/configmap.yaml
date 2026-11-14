@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ticketrouter-config
+  labels:
+    app: ticketrouter
+data:
+  PORT: "8000"
+  HOST: "0.0.0.0"
+  CASCADE_CONFIDENCE_THRESHOLD: "0.35"
+  BASE_MODEL: "Qwen/Qwen2.5-1.5B-Instruct"
+  GEMINI_MODEL: "gemini-2.5-flash"
+  LATENCY_P95_LIMIT_MS: "800"
+  DRIFT_PSI_THRESHOLD: "0.20"
+  DRIFT_FALLBACK_THRESHOLD: "0.35"
+  DRIFT_CONFIDENCE_DROP: "0.15"
+  SQLITE_DB_PATH: "/tmp/predictions.db"

@@ -1,0 +1,106 @@
+{
+  "clean_hotspots": [
+    {
+      "true_intent": "why_verify_identity",
+      "predicted_intent": "verify_my_identity",
+      "count": 6
+    },
+    {
+      "true_intent": "virtual_card_not_working",
+      "predicted_intent": "getting_virtual_card",
+      "count": 6
+    },
+    {
+      "true_intent": "pin_blocked",
+      "predicted_intent": "get_physical_card",
+      "count": 5
+    },
+    {
+      "true_intent": "card_acceptance",
+      "predicted_intent": "card_not_working",
+      "count": 5
+    },
+    {
+      "true_intent": "top_up_reverted",
+      "predicted_intent": "top_up_failed",
+      "count": 5
+    },
+    {
+      "true_intent": "unable_to_verify_identity",
+      "predicted_intent": "verify_my_identity",
+      "count": 5
+    },
+    {
+      "true_intent": "pending_top_up",
+      "predicted_intent": "top_up_failed",
+      "count": 4
+    },
+    {
+      "true_intent": "card_payment_not_recognised",
+      "predicted_intent": "extra_charge_on_statement",
+      "count": 4
+    },
+    {
+      "true_intent": "pending_transfer",
+      "predicted_intent": "transfer_timing",
+      "count": 4
+    },
+    {
+      "true_intent": "wrong_exchange_rate_for_cash_withdrawal",
+      "predicted_intent": "card_payment_wrong_exchange_rate",
+      "count": 4
+    }
+  ],
+  "shifted_hotspots": [
+    {
+      "true_intent": "why_verify_identity",
+      "predicted_intent": "unable_to_verify_identity",
+      "count": 15
+    },
+    {
+      "true_intent": "get_disposable_virtual_card",
+      "predicted_intent": "getting_virtual_card",
+      "count": 14
+    },
+    {
+      "true_intent": "card_swallowed",
+      "predicted_intent": "declined_cash_withdrawal",
+      "count": 13
+    },
+    {
+      "true_intent": "virtual_card_not_working",
+      "predicted_intent": "getting_virtual_card",
+      "count": 12
+    },
+    {
+      "true_intent": "failed_transfer",
+      "predicted_intent": "beneficiary_not_allowed",
+      "count": 10
+    },
+    {
+      "true_intent": "transfer_fee_charged",
+      "predicted_intent": "card_payment_fee_charged",
+      "count": 9
+    },
+    {
+      "true_intent": "virtual_card_not_working",
+      "predicted_intent": "card_not_working",
+      "count": 9
+    },
+    {
+      "true_intent": "verify_my_identity",
+      "predicted_intent": "unable_to_verify_identity",
+      "count": 9
+    },
+    {
+      "true_intent": "contactless_not_working",
+      "predicted_intent": "card_not_working",
+      "count": 8
+    },
+    {
+      "true_intent": "card_payment_not_recognised",
+      "predicted_intent": "cash_withdrawal_not_recognised",
+      "count": 8
+    }
+  ]
+}
