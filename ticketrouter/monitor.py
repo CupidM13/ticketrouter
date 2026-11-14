@@ -92,6 +92,8 @@ def evaluate_drift_and_quality(
     psi_threshold: float = PSI_THRESHOLD,
     fallback_threshold: float = FALLBACK_THRESHOLD,
     confidence_drop_threshold: float = CONFIDENCE_DROP_THRESHOLD,
+    retrain_file: Path | None = None,
+    history_file: Path | None = None,
 ) -> dict[str, Any]:
     """Analyze the recent prediction window for drift and quality degradation."""
     df = fetch_recent_predictions(db_path, window_size)
@@ -156,15 +158,19 @@ def evaluate_drift_and_quality(
         },
     }
 
+    retrain_target = retrain_file or RETRAIN_REQUEST_FILE
+    history_target = history_file or ALERT_HISTORY_FILE
+
     if alert_triggered:
         logger.warning("DRIFT ALERT TRIGGERED! Reasons:\n" + "\n".join(f" - {r}" for r in reasons))
         # Write retrain_request.json
-        with open(RETRAIN_REQUEST_FILE, "w", encoding="utf-8") as f:
+        retrain_target.parent.mkdir(parents=True, exist_ok=True)
+        with open(retrain_target, "w", encoding="utf-8") as f:
             json.dump(results, f, indent=2)
-        logger.info(f"Retrain request written to {RETRAIN_REQUEST_FILE}")
+        logger.info(f"Retrain request written to {retrain_target}")
 
         # Append to alert history
-        append_alert_history(results)
+        append_alert_history(results, history_file=history_target)
     else:
         logger.info(
             f"Monitoring Check OK: PSI={psi_val:.4f}, Fallback={fallback_rate * 100:.1f}%, MeanConf={mean_conf:.3f}"
@@ -173,18 +179,20 @@ def evaluate_drift_and_quality(
     return results
 
 
-def append_alert_history(alert_data: dict[str, Any]) -> None:
+def append_alert_history(
+    alert_data: dict[str, Any], history_file: Path = ALERT_HISTORY_FILE
+) -> None:
     """Append alert event to history log."""
-    ALERT_HISTORY_FILE.parent.mkdir(parents=True, exist_ok=True)
+    history_file.parent.mkdir(parents=True, exist_ok=True)
     history = []
-    if ALERT_HISTORY_FILE.exists():
+    if history_file.exists():
         try:
-            with open(ALERT_HISTORY_FILE, encoding="utf-8") as f:
+            with open(history_file, encoding="utf-8") as f:
                 history = json.load(f)
         except Exception:
             history = []
     history.append(alert_data)
-    with open(ALERT_HISTORY_FILE, "w", encoding="utf-8") as f:
+    with open(history_file, "w", encoding="utf-8") as f:
         json.dump(history, f, indent=2)
 
 
