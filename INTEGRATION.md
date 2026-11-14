@@ -83,15 +83,16 @@ import httpx
 
 TICKETROUTER_URL = "http://ticketrouter-service.default.svc.cluster.local:80/predict"
 
+
 async def route_ticket(ticket_text: str) -> dict:
     async with httpx.AsyncClient(timeout=3.0) as client:
         response = await client.post(TICKETROUTER_URL, json={"text": ticket_text})
         response.raise_for_status()
         data = response.json()
-        
+
     intent = data["intent"]
     confidence = data["confidence"]
-    
+
     # Priority routing dispatch
     if intent in ["lost_or_stolen_card", "card_compromised"]:
         await dispatch_fraud_escalation(ticket_text)
@@ -99,7 +100,7 @@ async def route_ticket(ticket_text: str) -> dict:
         await dispatch_automated_faq(ticket_text, intent)
     else:
         await assign_agent_queue(ticket_text, intent)
-        
+
     return data
 ```
 
@@ -190,11 +191,10 @@ consumer = KafkaConsumer(
     "tickets.incoming",
     bootstrap_servers=["localhost:9092"],
     value_deserializer=lambda m: json.loads(m.decode("utf-8")),
-    group_id="ticketrouter-workers"
+    group_id="ticketrouter-workers",
 )
 producer = KafkaProducer(
-    bootstrap_servers=["localhost:9092"],
-    value_serializer=lambda m: json.dumps(m).encode("utf-8")
+    bootstrap_servers=["localhost:9092"], value_serializer=lambda m: json.dumps(m).encode("utf-8")
 )
 
 for message in consumer:
@@ -206,7 +206,7 @@ for message in consumer:
     try:
         res = requests.post(ROUTER_URL, json={"text": body}, timeout=2.0)
         prediction = res.json()
-        
+
         # Enrich ticket event
         ticket["classified_intent"] = prediction["intent"]
         ticket["routing_confidence"] = prediction["confidence"]
@@ -233,13 +233,12 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from peft import PeftModel
 
+
 class InProcessTicketRouter:
     def __init__(self, adapter_dir: str = "models/qwen_lora_adapter"):
         self.tokenizer = AutoTokenizer.from_pretrained(adapter_dir)
         base = AutoModelForCausalLM.from_pretrained(
-            "Qwen/Qwen2.5-1.5B-Instruct",
-            torch_dtype=torch.float16,
-            device_map="auto"
+            "Qwen/Qwen2.5-1.5B-Instruct", torch_dtype=torch.float16, device_map="auto"
         )
         self.model = PeftModel.from_pretrained(base, adapter_dir)
         self.model.eval()
@@ -252,21 +251,23 @@ class InProcessTicketRouter:
                     "You are an enterprise banking query intent classifier. "
                     "Classify the customer inquiry into exactly one of the 77 standard intents. "
                     "Output ONLY the exact intent label."
-                )
+                ),
             },
-            {"role": "user", "content": f"Query: {text}"}
+            {"role": "user", "content": f"Query: {text}"},
         ]
-        prompt = self.tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+        prompt = self.tokenizer.apply_chat_template(
+            messages, tokenize=False, add_generation_prompt=True
+        )
         inputs = self.tokenizer(prompt, return_tensors="pt").to(self.model.device)
 
         with torch.no_grad():
             outputs = self.model.generate(**inputs, max_new_tokens=15, do_sample=False)
             intent = self.tokenizer.decode(
-                outputs[0][inputs.input_ids.shape[1]:],
-                skip_special_tokens=True
+                outputs[0][inputs.input_ids.shape[1] :], skip_special_tokens=True
             ).strip()
-            
+
         return intent
+
 
 # Usage
 router = InProcessTicketRouter()
