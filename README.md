@@ -6,6 +6,7 @@
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg)](https://www.docker.com/)
 [![Kubernetes](https://img.shields.io/badge/Kubernetes-kind%20verified-326CE5.svg)](https://kubernetes.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Integration Guide](https://img.shields.io/badge/Docs-Integration%20Guide-purple.svg)](INTEGRATION.md)
 
 An end-to-end LLM fine-tuning and MLOps lifecycle system for enterprise support-ticket intent classification across **77 granular banking intents** ([Banking77](https://huggingface.co/datasets/PolyAI/banking77)). TicketRouter marries an efficient open-source small language model (SLM) fine-tuned with LoRA with a calibrated, confidence-based cascade falling back to Google Gemini for ambiguous or out-of-distribution queries.
 
@@ -105,6 +106,9 @@ All models evaluated across the held-out clean test set (3,069 queries, zero tra
 ---
 
 ## 🚀 Quick Launch & Reproduction Guide
+
+> [!TIP]
+> **Connecting to an existing service?** See the full [Enterprise Integration Guide (INTEGRATION.md)](INTEGRATION.md) for synchronous REST, Kafka/SQS event consumers, in-process Python SDK usage, and Zendesk/Intercom webhook configurations.
 
 ### 1. Setup Environment
 ```bash
