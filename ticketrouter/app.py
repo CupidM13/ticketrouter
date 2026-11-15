@@ -5,13 +5,19 @@ from __future__ import annotations
 import json
 import os
 import sqlite3
+import sys
 import time
 from pathlib import Path
 
-import pandas as pd
-import streamlit as st
+# Ensure project root is in sys.path so 'ticketrouter' can be imported anywhere
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
-from ticketrouter.monitor import (
+import pandas as pd  # noqa: E402
+import streamlit as st  # noqa: E402
+
+from ticketrouter.monitor import (  # noqa: E402
     evaluate_drift_and_quality,
     get_training_intent_distribution,
 )

@@ -1,19 +1,19 @@
 {
-  "timestamp": "2026-11-14T14:10:39.094866+00:00",
+  "timestamp": "2026-11-15T10:48:58.954649+00:00",
   "window_size": 150,
   "alert_triggered": true,
   "reasons": [
-    "Class distribution drift detected: PSI = 8.9035 >= threshold (0.20)",
-    "Confidence drop detected: mean confidence 0.521 (drop 0.379 >= 0.15)"
+    "Class distribution drift detected: PSI = 8.6701 >= threshold (0.20)",
+    "Confidence drop detected: mean confidence 0.517 (drop 0.383 >= 0.15)"
   ],
   "metrics": {
-    "psi": 8.9035,
-    "mean_confidence": 0.5205,
-    "confidence_drop": 0.3795,
-    "fallback_rate": 0.3267,
-    "fallback_count": 49,
+    "psi": 8.6701,
+    "mean_confidence": 0.5168,
+    "confidence_drop": 0.3832,
+    "fallback_rate": 0.3333,
+    "fallback_count": 50,
     "latency_p50_ms": 0.33,
-    "latency_p95_ms": 0.37
+    "latency_p95_ms": 0.64
   },
   "thresholds": {
     "psi_threshold": 0.2,
